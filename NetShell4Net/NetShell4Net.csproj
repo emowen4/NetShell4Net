@@ -1,0 +1,71 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{2C139E82-A7C9-401D-88AA-6BC2AAFF50F8}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Monicais.NetShell4Net</RootNamespace>
+    <AssemblyName>Monicais.NetShell4Net</AssemblyName>
+    <TargetFrameworkVersion>v4.7.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AbstractCommand.cs" />
+    <Compile Include="Context\Http\CacheParamType.cs" />
+    <Compile Include="Context\Http\Http.cs" />
+    <Compile Include="Context\Http\Port.cs" />
+    <Compile Include="Context\Http\ServiceStateView.cs" />
+    <Compile Include="Context\Http\SettingType.cs" />
+    <Compile Include="Context\Http\TimeoutType.cs" />
+    <Compile Include="Context\Wlan\FilterNetworkType.cs" />
+    <Compile Include="Context\Wlan\FilterPermission.cs" />
+    <Compile Include="Context\Wlan\HostedNetworkData.cs" />
+    <Compile Include="Context\Wlan\HostedNetworkKeyUsage.cs" />
+    <Compile Include="Context\Wlan\NetworkMode.cs" />
+    <Compile Include="Context\Wlan\ProfileAuthentication.cs" />
+    <Compile Include="Context\Wlan\ProfileAuthMode.cs" />
+    <Compile Include="Context\Wlan\ProfileConnectionMode.cs" />
+    <Compile Include="Context\Wlan\ProfileConnectionType.cs" />
+    <Compile Include="Context\Wlan\ProfileCost.cs" />
+    <Compile Include="Context\Wlan\ProfileEncryption.cs" />
+    <Compile Include="Context\Wlan\ProfileKeyType.cs" />
+    <Compile Include="Context\Wlan\ProfileRandomization.cs" />
+    <Compile Include="Context\Wlan\ProfileSsoMode.cs" />
+    <Compile Include="Context\Wlan\ProfileType.cs" />
+    <Compile Include="Context\Wlan\ProfileUser.cs" />
+    <Compile Include="Context\Wlan\ShowHostedNetworkSetting.cs" />
+    <Compile Include="Context\Wlan\TracingMode.cs" />
+    <Compile Include="Context\Wlan\Wlan.cs" />
+    <Compile Include="ICommand.cs" />
+    <Compile Include="NetShell.cs" />
+    <Compile Include="ParameterEnum.cs" />
+    <Compile Include="ParameterUtil.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
