@@ -1,6 +1,6 @@
 ﻿namespace Monicais.NetShell4Net.Context.Wlan
 {
-    public class Wlan : AbstractCommand
+    public sealed class Wlan : AbstractCommand
     {
         public Wlan(ICommand parent) : base("wlan", parent) { }
 
@@ -70,12 +70,6 @@
                            out outputs);
         }
 
-        public bool Dump(out string outputs)
-        {
-            return Execute("dump",
-                           out outputs);
-        }
-
         public bool ExportHostedNetworkProfile(out string outputs)
         {
             return Execute("export hostednetworkprofile",
@@ -93,12 +87,6 @@
                          + ParameterUtil.Required(nameof(folder), folder, true)
                          + ParameterUtil.Optional(nameof(@interface), @interface, true)
                          + ParameterUtil.Optional(nameof(key), key, true),
-                           out outputs);
-        }
-
-        public bool Help(out string outputs)
-        {
-            return Execute("help",
                            out outputs);
         }
 

@@ -16,6 +16,7 @@ namespace Monicais.NetShell4Net
         }
 
         public string Name { get; }
+
         public ICommand Parent { get; }
 
         public virtual bool Execute(string command, out string outputs)
@@ -27,15 +28,15 @@ namespace Monicais.NetShell4Net
             else
             {
                 var info = new ProcessStartInfo
-                {
-                    Arguments = command,
-                    CreateNoWindow = true,
-                    ErrorDialog = false,
-                    FileName = "cmd.exe",
-                    RedirectStandardOutput = true,
-                    StandardOutputEncoding = Encoding.Unicode,
-                    UseShellExecute = false
-                };
+                           {
+                               Arguments = command,
+                               CreateNoWindow = true,
+                               ErrorDialog = false,
+                               FileName = "cmd.exe",
+                               RedirectStandardOutput = true,
+                               StandardOutputEncoding = Encoding.Unicode,
+                               UseShellExecute = false
+                           };
                 var process = Process.Start(info);
                 if (process == null)
                 {
@@ -45,9 +46,24 @@ namespace Monicais.NetShell4Net
                 var outputReader = process.StandardOutput;
                 process.WaitForExit();
                 outputs = outputReader.ReadToEnd();
+#if TEST
+                outputs = $"{command}\n{outputs}";
+#endif
                 outputReader.Close();
                 return process.ExitCode == 0;
             }
+        }
+
+        public bool Dump(out string outputs)
+        {
+            return Execute("dump",
+                           out outputs);
+        }
+
+        public bool Help(out string outputs)
+        {
+            return Execute("help",
+                           out outputs);
         }
     }
 }

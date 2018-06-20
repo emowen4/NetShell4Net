@@ -41,6 +41,10 @@
     <Compile Include="Context\Http\ServiceStateView.cs" />
     <Compile Include="Context\Http\SettingType.cs" />
     <Compile Include="Context\Http\TimeoutType.cs" />
+    <Compile Include="Context\Lan\Lan.cs" />
+    <Compile Include="Context\Lan\ProfileAuthMode.cs" />
+    <Compile Include="Context\Lan\ProfileSsoMode.cs" />
+    <Compile Include="Context\Lan\TracingMode.cs" />
     <Compile Include="Context\Wlan\FilterNetworkType.cs" />
     <Compile Include="Context\Wlan\FilterPermission.cs" />
     <Compile Include="Context\Wlan\HostedNetworkData.cs" />

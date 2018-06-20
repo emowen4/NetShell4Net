@@ -1,6 +1,6 @@
 ﻿namespace Monicais.NetShell4Net.Context.Http
 {
-    public class Http : AbstractCommand
+    public sealed class Http : AbstractCommand
     {
         public Http(ICommand parent) : base("http", parent) { }
 
@@ -152,21 +152,9 @@
                            out outputs);
         }
 
-        public bool Dump(out string outputs)
-        {
-            return Execute("dump",
-                           out outputs);
-        }
-
         public bool FlushLogBuffer(out string outputs)
         {
             return Execute("flush logbuffer",
-                           out outputs);
-        }
-
-        public bool Help(out string outputs)
-        {
-            return Execute("help",
                            out outputs);
         }
 
